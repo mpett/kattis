@@ -1,5 +1,10 @@
 import java.util.Arrays;
-
+/**
+ * Solution for Kattis problem-id: plantingtrees
+ * https://open.kattis.com/problems/plantingtrees
+ *
+ * Author: Martin Pettersson
+ */
 public class PlantingTrees {
     Kattio io = new Kattio(System.in, System.out);
     int [] trees;
@@ -14,6 +19,7 @@ public class PlantingTrees {
         io.close();
     }
 
+    // Calculates the minimum number of days until the farmer can have his party.
     int daysUntilParty() {
         Arrays.sort(trees);
         int daysUntilParty = 2;
@@ -32,6 +38,7 @@ public class PlantingTrees {
         return daysUntilParty;
     }
 
+    // Reads input as specified.
     void handleInput() {
         numberOfSeeds = io.getInt();
         trees = new int[numberOfSeeds];

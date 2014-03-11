@@ -4,7 +4,7 @@
     <list default="true" id="9c30f135-d33f-40cf-900e-77f2c563b20e" name="Default" comment="" />
     <ignored path="plantingtrees.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/PlantingTrees.java" changelist="9c30f135-d33f-40cf-900e-77f2c563b20e" time="1394561355849" ignored="false" />
+    <file path="/PlantingTrees.java" changelist="9c30f135-d33f-40cf-900e-77f2c563b20e" time="1394561688921" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -80,7 +80,7 @@
       <file leaf-file-name="PlantingTrees.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/PlantingTrees.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="1" column="0" selection-start="25" selection-end="25" vertical-scroll-proportion="0.023480663">
+            <state line="0" column="24" selection-start="24" selection-end="24" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -411,7 +411,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/PlantingTrees.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="0" selection-start="25" selection-end="25" vertical-scroll-proportion="0.023480663">
+        <state line="0" column="24" selection-start="24" selection-end="24" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
