@@ -15,20 +15,20 @@ public class Erase {
 
     public Erase() {
         handleInput(); String result;
-        // If N is even, the problem is easy. We just need to check that both strings are equal.
+        // If N is an even integer, we just need to check that both strings are equal.
         if(N % 2 == 0)
             result = beforeDel.equals(afterDel) ? "Deletion succeeded" : "Deletion failed";
-        // If not, we have to check if the second binary string is the first one reversed.
+        // If not, we have to check if the second binary string is the first one inverted.
         else
-            result = afterDel.equals(reverseBinary(beforeDel)) ? "Deletion succeeded" : "Deletion failed";
+            result = afterDel.equals(invertBinary(beforeDel)) ? "Deletion succeeded" : "Deletion failed";
         // Result printed to stdout
         System.out.println(result);
         // Flush input
         io.flush();
     }
 
-    // Takes a binary string as input, and returns the reversed binary string.
-    String reverseBinary(String binary) {
+    // Takes a binary string as input, and returns the inverted binary string.
+    String invertBinary(String binary) {
         StringBuilder builder = new StringBuilder();
         for(int character = 0; character < binary.length(); character++) {
             if(binary.charAt(character) == '0')
@@ -45,4 +45,3 @@ public class Erase {
         afterDel = io.getWord();
     }
 }
- 
