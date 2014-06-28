@@ -4,6 +4,7 @@
     <list default="true" id="54d06ede-0ef3-4857-86bb-45bba17f55b2" name="Default" comment="" />
     <ignored path="erase.iws" />
     <ignored path=".idea/workspace.xml" />
+    <file path="/Erase.java" changelist="54d06ede-0ef3-4857-86bb-45bba17f55b2" time="1403940101850" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -79,7 +80,7 @@
       <file leaf-file-name="Erase.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Erase.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="17" column="37" selection-start="412" selection-end="412" vertical-scroll-proportion="0.33954728">
+            <state line="16" column="37" selection-start="370" selection-end="370" vertical-scroll-proportion="0.3195739">
               <folding />
             </state>
           </provider>
@@ -95,8 +96,8 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/src/Erase.java" />
         <option value="$PROJECT_DIR$/src/Kattio.java" />
+        <option value="$PROJECT_DIR$/src/Erase.java" />
       </list>
     </option>
   </component>
@@ -379,7 +380,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Erase.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="37" selection-start="412" selection-end="412" vertical-scroll-proportion="0.33954728">
+        <state line="16" column="37" selection-start="370" selection-end="370" vertical-scroll-proportion="0.3195739">
           <folding />
         </state>
       </provider>
