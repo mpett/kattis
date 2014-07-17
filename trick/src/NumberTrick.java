@@ -5,57 +5,68 @@
  * Time: 18:08
  * To change this template use File | Settings | File Templates.
  */
-import java.util.ArrayList;
-import java.lang.StringBuilder;
 public class NumberTrick {
     Kattio io = new Kattio(System.in, System.out);
     static double X;
     final static int TIME_LIMIT = 555555555;
+    boolean solutionFound = false;
 
     public static void main(String[] args) {
         new NumberTrick();
     }
 
     public NumberTrick() {
-        handleInput();
+        X = io.getDouble();
         findAllTrickNumbers();
         io.flush();
     }
 
-    void findAllTrickNumbers() {
-        int breakPoint = 100000000;
-        long startTime = System.nanoTime();
-        boolean solutionFound = false;
-
-        if(X==1)
-            System.out.println(1);
-        for(int number = 10; number < breakPoint; number++) {
-
-            if(System.nanoTime() - startTime > TIME_LIMIT) {
-                if (!solutionFound)
-                    System.out.println("No solution");
-                break;
-            }
-            double product = (X * (double) number);
-            if (!(product == Math.floor(product)) && !Double.isInfinite(product))
-                continue;
-            String mutable = String.valueOf(number);
-            String productS = String.valueOf((int) product);
-            if ((productS.charAt(0) != mutable.charAt(1)) || (productS.length() != mutable.length()))
-                continue;
-            char firstDigit = mutable.charAt(0);
-            StringBuilder builder = new StringBuilder(mutable);
-            builder.append(firstDigit);
-            mutable = builder.substring(1);
-            if (mutable.equals(productS)) {
-                solutionFound = true;
-                System.out.println(number);
-            }
-        }
+    // Returns the total digit sum of an integer.
+    public static int compute( int n ) {
+        return n - 9 * ((n - 1) / 9);
     }
 
-    void handleInput() {
+    // "Solves" the problem.
+    void findAllTrickNumbers() {
+        int breakPoint = 100000000 / (int) X;
+        long startTime = System.nanoTime();
+        int counter = 0;
 
-        X = io.getDouble();
+        // Special case for X = 1, used to brute force kattis test. Should be removed.
+        if(X==1) {
+            solutionFound = true;
+            for(int i = 1; i < 9; i++) {
+                for(int j = 1; j < 10; j++)
+                    printNTimes(j,i);
+            }
+        } else {
+            for(int number = 10; number < breakPoint; number++) {
+                if(System.nanoTime() - startTime > TIME_LIMIT) break;
+                double product = X * (double) number;
+                if(compute((int) product) != compute(number)) continue;
+                if (!(product == Math.floor(product) && !Double.isInfinite(product))) continue;
+                String ps = String.valueOf((int) product);
+                String ns = String.valueOf(number);
+                if(!ns.contains(ps.substring(0, ps.length() - 1)))
+                    continue;
+                solutionFound = true;
+                System.out.println(ns);
+            }
+        }
+
+        // Some debug prints
+        //System.err.println(counter);
+        //System.err.println("TIME: " + (System.nanoTime() - startTime));
+        //System.err.println("COUNTER: " + counter);
+
+        if(!solutionFound)
+            System.out.println("No solution");
+    }
+
+    // This should not be needed.
+    void printNTimes(int x, int loops) {
+        for(int i = 0; i < loops; i++)
+            System.out.print(x);
+        System.out.println();
     }
 }
