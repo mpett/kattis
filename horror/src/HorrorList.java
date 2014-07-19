@@ -7,7 +7,8 @@
  */
 public class HorrorList {
     Kattio io = new Kattio(System.in, System.out);
-    static int N, H, L; static Movie[] movies; static String horrorMovies;
+    static int N, H, L; static Movie[] movies; static String horrorMovies; static int[] horrorIndices;
+    final static int INFINITY = 999999999;
 
     public static void main(String[] args) {
         new HorrorList();
@@ -15,17 +16,42 @@ public class HorrorList {
 
     public HorrorList() {
         handleInput();
-        printInput();
         calculateHorrorIndex();
+        printOutput();
     }
 
     void calculateHorrorIndex() {
-        for(Movie movie : movies) {
-            if (horrorMovies.contains(String.valueOf(movie.movieId)))
-                movie.horrorIndex = 0;
-            if (horrorMovies.contains(String.valueOf(movie.similarMovie)))
-                movie.similarMovieIsBad = true;
+
+
+        horrorIndexHelper();
+    }
+
+    void printOutput() {
+        for (int i = 0; i < N; i++) {
+            System.err.println("Movie: " + i + ": " + horrorIndices[i]);
         }
+    }
+
+
+    void horrorIndexHelper() {
+        for(Movie movie : movies) {
+            int thisMovie = movie.movieId;
+            int similar = movie.similarMovie;
+
+            if ( (horrorMovies.contains(String.valueOf(thisMovie))) && (horrorMovies.contains(String.valueOf(similar))) ) {
+                horrorIndices[thisMovie] = 0; horrorIndices[similar] = 0; continue;
+            }
+
+            if ( (horrorMovies.contains(String.valueOf(thisMovie))) && !(horrorMovies.contains(String.valueOf(similar))) ) {
+                horrorIndices[thisMovie] = 0; horrorIndices[similar] = 1;
+            }
+            if ( !(horrorMovies.contains(String.valueOf(thisMovie))) && (horrorMovies.contains(String.valueOf(similar))) ) {
+                horrorIndices[thisMovie]++;
+            }
+
+        }
+
+
     }
 
 
@@ -48,16 +74,22 @@ public class HorrorList {
         movies = new Movie[L];
         for (int movieIndex = 0; movieIndex < L; movieIndex++)
             movies[movieIndex] = new Movie(io.getInt(), io.getInt());
+        horrorIndices = new int[N];
+        System.err.println(N);
+        for (int horrorIndex = 0; horrorIndex < N; horrorIndex++)
+            horrorIndices[horrorIndex] = INFINITY;
+
     }
 
     // Data structure for storing a Movie ID along with a similar Movie ID,
     // all according to specs.
     class Movie {
-        final int movieId;
-        final int similarMovie;
-        int horrorIndex;
-        boolean similarMovieIsBad = false;
+        int movieId, similarMovie;
+        boolean similarIsBad = false;
         Movie(int movieId, int similarMovie) { this.movieId = movieId; this.similarMovie = similarMovie; }
-        // depending on your use case, equals? hashCode?  More methods?
+        void swap() {
+            similarMovie = movieId;
+            movieId = similarMovie;
+        }
     }
 }
