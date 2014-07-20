@@ -15,29 +15,52 @@ public class Virus {
 
     public Virus() {
         handleInput();
-        io.flush();
         System.out.println(getMinLengthChangeDNA());
+        io.flush();
+
     }
 
     int getMinLengthChangeDNA () {
-        if (normalDNA.equals(virusDNA)) return 0;
-        int minChange = 0;
-        for (int j = 0; j < virusDNA.length() + 1; j++) {
-            for (int i = 0; i < virusDNA.length() - minChange + 1; i++) {
-                String subsequence = virusDNA.substring(i, i + minChange);
-                System.err.print(subsequence + " ");
-                if (!normalDNA.contains(subsequence)) {
-                    //System.err.println(subsequence);
-                    return minChange;
+
+
+        if (normalDNA.length() >= virusDNA.length()) {
+            for (int charIndex = 0; charIndex < virusDNA.length(); charIndex++) {
+                if (!(normalDNA.charAt(charIndex) == virusDNA.charAt(charIndex))) {
+                    normalDNA = normalDNA.substring(charIndex, normalDNA.length());
+                    virusDNA = virusDNA.substring(charIndex, virusDNA.length());
+                    break;
                 }
             }
-            minChange++;
+
+            int diff = normalDNA.length() - virusDNA.length();
+            for (int charIndex = virusDNA.length() -1; charIndex >= 0; charIndex--) {
+                if (virusDNA.charAt(charIndex) == normalDNA.charAt(charIndex + diff))
+                    virusDNA = removeLastChar(virusDNA);
+            }
+        } else {
+            for (int charIndex = 0; charIndex < normalDNA.length(); charIndex++) {
+                if (!(normalDNA.charAt(charIndex) == virusDNA.charAt(charIndex))) {
+                    normalDNA = normalDNA.substring(charIndex, normalDNA.length());
+                    virusDNA = virusDNA.substring(charIndex, virusDNA.length());
+                    break;
+                }
+            }
+            int diff = virusDNA.length() - normalDNA.length();
+            for (int charIndex = normalDNA.length() -1; charIndex >= 0; charIndex--) {
+                if (virusDNA.charAt(charIndex + diff) == normalDNA.charAt(charIndex))
+                    virusDNA = removeLastChar(virusDNA);
+            }
         }
-        return 0;
+
+        return virusDNA.length();
     }
 
     void handleInput() {
         normalDNA = io.getWord();
         virusDNA = io.getWord();
+    }
+
+    String removeLastChar(String str) {
+        return str.substring(0,str.length()-1);
     }
 }
