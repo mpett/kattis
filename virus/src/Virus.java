@@ -1,3 +1,4 @@
+
 /**
  * Created with IntelliJ IDEA.
  * User: martinpettersson
@@ -22,9 +23,11 @@ public class Virus {
 
     int getMinLengthChangeDNA () {
 
+        if (normalDNA.equals(virusDNA)) return 0;
 
         if (normalDNA.length() >= virusDNA.length()) {
             for (int charIndex = 0; charIndex < virusDNA.length(); charIndex++) {
+                //System.err.println((normalDNA.charAt(charIndex) +" "+ virusDNA.charAt(charIndex)));
                 if (!(normalDNA.charAt(charIndex) == virusDNA.charAt(charIndex))) {
                     normalDNA = normalDNA.substring(charIndex, normalDNA.length());
                     virusDNA = virusDNA.substring(charIndex, virusDNA.length());
@@ -32,12 +35,15 @@ public class Virus {
                 }
             }
 
+
             int diff = normalDNA.length() - virusDNA.length();
+            //System.err.println(normalDNA + " " +virusDNA);
             for (int charIndex = virusDNA.length() -1; charIndex >= 0; charIndex--) {
                 if (virusDNA.charAt(charIndex) == normalDNA.charAt(charIndex + diff))
                     virusDNA = removeLastChar(virusDNA);
             }
         } else {
+
             for (int charIndex = 0; charIndex < normalDNA.length(); charIndex++) {
                 if (!(normalDNA.charAt(charIndex) == virusDNA.charAt(charIndex))) {
                     normalDNA = normalDNA.substring(charIndex, normalDNA.length());
@@ -45,12 +51,16 @@ public class Virus {
                     break;
                 }
             }
+
             int diff = virusDNA.length() - normalDNA.length();
             for (int charIndex = normalDNA.length() -1; charIndex >= 0; charIndex--) {
                 if (virusDNA.charAt(charIndex + diff) == normalDNA.charAt(charIndex))
                     virusDNA = removeLastChar(virusDNA);
             }
+
         }
+
+
 
         return virusDNA.length();
     }
