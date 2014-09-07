@@ -100,10 +100,19 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Aquarium.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="Aquarium.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Aquarium.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="32" column="9" selection-start="847" selection-end="847" vertical-scroll-proportion="0.6391478">
+            <state line="32" column="9" selection-start="847" selection-end="847" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Erase.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/Erase.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="40" column="1" selection-start="1160" selection-end="1160" vertical-scroll-proportion="0.79893476">
               <folding />
             </state>
           </provider>
@@ -139,6 +148,7 @@
       <list>
         <option value="$PROJECT_DIR$/src/Statistics.java" />
         <option value="$PROJECT_DIR$/src/Aquarium.java" />
+        <option value="$PROJECT_DIR$/src/Erase.java" />
       </list>
     </option>
   </component>
@@ -517,7 +527,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Aquarium.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="32" column="9" selection-start="847" selection-end="847" vertical-scroll-proportion="0.6391478">
+        <state line="32" column="9" selection-start="847" selection-end="847" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Erase.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="40" column="1" selection-start="1160" selection-end="1160" vertical-scroll-proportion="0.79893476">
           <folding />
         </state>
       </provider>
