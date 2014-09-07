@@ -4,6 +4,7 @@
     <list default="true" id="5ef5293c-63fa-43bc-9500-e3f6e1651f81" name="Default" comment="" />
     <ignored path="kattis_java.iws" />
     <ignored path=".idea/workspace.xml" />
+    <file path="/Reversebinary.java" changelist="5ef5293c-63fa-43bc-9500-e3f6e1651f81" time="1410131376700" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -109,10 +110,19 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Erase.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="Erase.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Erase.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="40" column="1" selection-start="1160" selection-end="1160" vertical-scroll-proportion="0.79893476">
+            <state line="40" column="1" selection-start="1160" selection-end="1160" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Reversebinary.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/Reversebinary.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="13" column="31" selection-start="499" selection-end="499" vertical-scroll-proportion="0.26785713">
               <folding />
             </state>
           </provider>
@@ -149,6 +159,7 @@
         <option value="$PROJECT_DIR$/src/Statistics.java" />
         <option value="$PROJECT_DIR$/src/Aquarium.java" />
         <option value="$PROJECT_DIR$/src/Erase.java" />
+        <option value="$PROJECT_DIR$/src/Reversebinary.java" />
       </list>
     </option>
   </component>
@@ -534,7 +545,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Erase.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="40" column="1" selection-start="1160" selection-end="1160" vertical-scroll-proportion="0.79893476">
+        <state line="40" column="1" selection-start="1160" selection-end="1160" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Reversebinary.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="13" column="31" selection-start="499" selection-end="499" vertical-scroll-proportion="0.26785713">
           <folding />
         </state>
       </provider>
