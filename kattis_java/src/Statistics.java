@@ -34,5 +34,4 @@ public class Statistics {
             sampleArray[i] = io.getInt();
         return sampleArray;
     }
-
 }
