@@ -11,7 +11,7 @@ public class MixedFractions {
     public static void main(String[] args) {
         new MixedFractions();
     }
-    
+
     public MixedFractions() {
         boolean hasMoreTestCases = handleInput();
         int numInteger, remainder = 0;
@@ -24,6 +24,7 @@ public class MixedFractions {
         io.flush();
     }
 
+    // Handles input according to problem specification.
     boolean handleInput() {
         numerator = io.getInt();
         denominator = io.getInt();
