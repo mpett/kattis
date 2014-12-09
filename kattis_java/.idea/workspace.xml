@@ -63,18 +63,6 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="Doorman.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Doorman.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="53" max-vertical-offset="1245">
-              <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-              <folding>
-                <element signature="n#!!doc" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="DiceGame.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/DiceGame.java">
           <provider selected="true" editor-type-id="text-editor">
@@ -128,7 +116,7 @@
       <file leaf-file-name="Aquarium.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Aquarium.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="8" max-vertical-offset="765">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="765">
               <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
               <folding />
             </state>
@@ -163,14 +151,27 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Heliocentric.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="Heliocentric.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Heliocentric.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.45155394" vertical-offset="8" max-vertical-offset="690">
-              <caret line="17" column="25" selection-start-line="17" selection-start-column="25" selection-end-line="17" selection-end-column="25" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="690">
+              <caret line="24" column="22" selection-start-line="24" selection-start-column="22" selection-end-line="24" selection-end-column="22" />
               <folding>
                 <element signature="e#321#322#0" expanded="true" />
                 <element signature="e#355#356#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Judging.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/Judging.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.37864077" vertical-offset="135" max-vertical-offset="810">
+              <caret line="22" column="62" selection-start-line="22" selection-start-column="62" selection-end-line="22" selection-end-column="62" />
+              <folding>
+                <element signature="e#430#431#0" expanded="true" />
+                <element signature="e#459#460#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -202,6 +203,7 @@
         <option value="$PROJECT_DIR$/src/Babelfish.java" />
         <option value="$PROJECT_DIR$/src/ToiletSeat.java" />
         <option value="$PROJECT_DIR$/src/Heliocentric.java" />
+        <option value="$PROJECT_DIR$/src/Judging.java" />
       </list>
     </option>
   </component>
@@ -314,23 +316,7 @@
     <property name="recentsLimit" value="5" />
     <property name="dynamic.classpath" value="false" />
   </component>
-  <component name="RunManager" selected="Application.Heliocentric">
-    <configuration default="false" name="Soundex" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Soundex" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="ENABLE_SWING_INSPECTOR" value="false" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="kattis_java" />
-      <envs />
-      <RunnerSettings RunnerId="Run" />
-      <ConfigurationWrapper RunnerId="Run" />
-      <method />
-    </configuration>
+  <component name="RunManager" selected="Application.Judging">
     <configuration default="false" name="Carrots" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Carrots" />
       <option name="VM_PARAMETERS" />
@@ -387,6 +373,22 @@
     </configuration>
     <configuration default="false" name="Heliocentric" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Heliocentric" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="kattis_java" />
+      <envs />
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method />
+    </configuration>
+    <configuration default="false" name="Judging" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Judging" />
       <option name="VM_PARAMETERS" />
       <option name="PROGRAM_PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
@@ -531,19 +533,19 @@
       <method />
     </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="Application.Soundex" />
-      <item index="1" class="java.lang.String" itemvalue="Application.Carrots" />
-      <item index="2" class="java.lang.String" itemvalue="Application.Babelfish" />
-      <item index="3" class="java.lang.String" itemvalue="Application.ToiletSeat" />
-      <item index="4" class="java.lang.String" itemvalue="Application.Heliocentric" />
+      <item index="0" class="java.lang.String" itemvalue="Application.Carrots" />
+      <item index="1" class="java.lang.String" itemvalue="Application.Babelfish" />
+      <item index="2" class="java.lang.String" itemvalue="Application.ToiletSeat" />
+      <item index="3" class="java.lang.String" itemvalue="Application.Heliocentric" />
+      <item index="4" class="java.lang.String" itemvalue="Application.Judging" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Application.Heliocentric" />
-        <item index="1" class="java.lang.String" itemvalue="Application.ToiletSeat" />
-        <item index="2" class="java.lang.String" itemvalue="Application.Babelfish" />
-        <item index="3" class="java.lang.String" itemvalue="Application.Carrots" />
-        <item index="4" class="java.lang.String" itemvalue="Application.Soundex" />
+        <item index="0" class="java.lang.String" itemvalue="Application.Judging" />
+        <item index="1" class="java.lang.String" itemvalue="Application.Heliocentric" />
+        <item index="2" class="java.lang.String" itemvalue="Application.ToiletSeat" />
+        <item index="3" class="java.lang.String" itemvalue="Application.Babelfish" />
+        <item index="4" class="java.lang.String" itemvalue="Application.Carrots" />
       </list>
     </recent_temporary>
     <configuration name="&lt;template&gt;" type="WebApp" default="true" selected="false">
@@ -584,7 +586,7 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2562189" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2960199" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -619,13 +621,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/Doorman.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="120" max-vertical-offset="1275">
-          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Virus.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="120" max-vertical-offset="1230">
@@ -1011,11 +1006,22 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Heliocentric.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.45155394" vertical-offset="8" max-vertical-offset="690">
-          <caret line="17" column="25" selection-start-line="17" selection-start-column="25" selection-end-line="17" selection-end-column="25" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="690">
+          <caret line="24" column="22" selection-start-line="24" selection-start-column="22" selection-end-line="24" selection-end-column="22" />
           <folding>
             <element signature="e#321#322#0" expanded="true" />
             <element signature="e#355#356#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Judging.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.37864077" vertical-offset="135" max-vertical-offset="810">
+          <caret line="22" column="62" selection-start-line="22" selection-start-column="62" selection-end-line="22" selection-end-column="62" />
+          <folding>
+            <element signature="e#430#431#0" expanded="true" />
+            <element signature="e#459#460#0" expanded="true" />
           </folding>
         </state>
       </provider>
