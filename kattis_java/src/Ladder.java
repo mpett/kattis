@@ -1,5 +1,8 @@
 /**
- * Created by martinpettersson on 10/12/14.
+ * Solution for Kattis problem-id: ladder
+ * https://open.kattis.com/problems/ladder
+ *
+ * Author: Martin Pettersson
  */
 public class Ladder {
     Kattio io = new Kattio(System.in);
