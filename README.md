@@ -7,22 +7,44 @@ Kattis is an automated testing tool developed at KTH used for course exercises a
 Solved Problems
 ----
 Aaah!
+
 A Different Problem
+
 A List Game
+
 Army Strength (Easy)
+
 Army Strength (Hard)
+
 Babelfish
+
 Bishops
+
 Bus Numbers
+
 Dice Game
+
 Doorman
+
 Erase Securely
+
+Kemija
+
 Ladder
+
 Mixed Fractions
+
 Numbers On a Tree
+
 Planting Trees
+
 Reversed Binary Numbers
+
 Solving for Carrots
+
 Statistics
+
 The Easiest Problem Is This One
+
 Timebomb
+
