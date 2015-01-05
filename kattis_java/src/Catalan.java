@@ -1,10 +1,11 @@
 import java.math.BigInteger;
+import java.util.Random;
 
 /**
  * Created by martinpettersson on 29/12/14.
  */
 public class Catalan {
-    Kattio io = new Kattio(System.in);
+    Kattio io = new Kattio(System.in, System.out);
     final static BigInteger ONE = BigInteger.ONE;
 
     public static void main(String[] args) {
@@ -13,9 +14,10 @@ public class Catalan {
 
     public Catalan() {
         int q = io.getInt();
+       // generateTestData();
         for (int number = 0; number < q; number++) {
             int x = handleInput();
-            System.out.println(catalanNumber(x));
+            io.print(catalanNumber(x) + "\n");
         }
         io.close();
     }
@@ -32,6 +34,14 @@ public class Catalan {
             inc = inc.add(ONE);
         }
         return fact;
+    }
+
+    // delete me!
+    void generateTestData() {
+        Random r =  new Random();
+        for (int i = 0; i < 1000; i++) {
+            System.err.println(r.nextInt(4999));
+        }
     }
 
     int handleInput() {
