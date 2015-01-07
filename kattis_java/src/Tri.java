@@ -1,5 +1,8 @@
 /**
- * Created by martinpettersson on 07/01/15.
+ * Solution for Kattis problem-id: tri
+ * https://open.kattis.com/problems/tri
+ *
+ * Author: Martin Pettersson
  */
 public class Tri {
     Kattio io = new Kattio(System.in);
@@ -11,6 +14,7 @@ public class Tri {
 
     public Tri() {
         handleInput();
+        // Just end the show if we found the solution.
         if (leftHandSide()) {
             io.close();
             System.exit(0);
@@ -19,6 +23,10 @@ public class Tri {
         io.close();
     }
 
+    /**
+     * Check left hand side.
+     * @return
+     */
     boolean leftHandSide() {
         if (first == (second + third))
             System.out.println(first + "=" + second + "+" + third);
@@ -32,6 +40,9 @@ public class Tri {
         return true;
     }
 
+    /**
+     * Check right hand side.
+     */
     void rightHandSide() {
         if ((first + second) == third)
             System.out.println(first + "+" + second + "=" + third);
@@ -43,6 +54,9 @@ public class Tri {
             System.out.println(first + "/" + second + "=" + third);
     }
 
+    /**
+     * Handle input according to spec.
+     */
     void handleInput() {
         first = io.getInt(); second = io.getInt(); third = io.getInt();
     }
