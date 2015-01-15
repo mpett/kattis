@@ -30,7 +30,7 @@ public class NumberTrick {
     void findAllTrickNumbers() {
         int breakPoint = 100000000 / (int) X;
         long startTime = System.nanoTime();
-        int counter = 0;
+        int countger = 0;
 
         // Special case for X = 1, used to brute force kattis test. Should be removed.
         if(X==1) {
