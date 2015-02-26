@@ -6,6 +6,9 @@ Kattis is an automated testing tool developed at KTH used for course exercises a
 
 Solved Problems
 ----
+
+AlphabetSpam
+
 Aaah!
 
 A Different Problem
