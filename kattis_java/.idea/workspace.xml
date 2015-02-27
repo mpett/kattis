@@ -123,16 +123,30 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AlphabetSpam.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="AlphabetSpam.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/AlphabetSpam.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.20071048" vertical-offset="232" max-vertical-offset="795">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="795">
               <caret line="23" column="56" selection-start-line="23" selection-start-column="56" selection-end-line="23" selection-end-column="56" />
               <folding>
                 <element signature="e#279#280#0" expanded="true" />
                 <element signature="e#313#314#0" expanded="true" />
                 <element signature="e#1336#1337#0" expanded="true" />
                 <element signature="e#1371#1372#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="BreakingBad.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/BreakingBad.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-0.026642984" vertical-offset="135" max-vertical-offset="1020">
+              <caret line="8" column="21" selection-start-line="8" selection-start-column="21" selection-end-line="8" selection-end-column="21" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#370#371#0" expanded="true" />
+                <element signature="e#403#404#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -153,16 +167,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0" vertical-offset="465" max-vertical-offset="705">
               <caret line="31" column="50" selection-start-line="31" selection-start-column="50" selection-end-line="31" selection-end-column="50" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Tri.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Tri.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="915" max-vertical-offset="1035">
-              <caret line="61" column="5" selection-start-line="61" selection-start-column="5" selection-end-line="61" selection-end-column="5" />
               <folding />
             </state>
           </provider>
@@ -203,6 +207,7 @@
         <option value="$PROJECT_DIR$/src/Tri.java" />
         <option value="$PROJECT_DIR$/src/NumberTrick.java" />
         <option value="$PROJECT_DIR$/src/AlphabetSpam.java" />
+        <option value="$PROJECT_DIR$/src/BreakingBad.java" />
       </list>
     </option>
   </component>
@@ -314,23 +319,7 @@
     <property name="recentsLimit" value="5" />
     <property name="dynamic.classpath" value="false" />
   </component>
-  <component name="RunManager" selected="Application.AlphabetSpam">
-    <configuration default="false" name="Kemija" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Kemija" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="ENABLE_SWING_INSPECTOR" value="false" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="kattis_java" />
-      <envs />
-      <RunnerSettings RunnerId="Run" />
-      <ConfigurationWrapper RunnerId="Run" />
-      <method />
-    </configuration>
+  <component name="RunManager" selected="Application.BreakingBad">
     <configuration default="false" name="Catalan" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Catalan" />
       <option name="VM_PARAMETERS" />
@@ -381,6 +370,22 @@
     </configuration>
     <configuration default="false" name="AlphabetSpam" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="AlphabetSpam" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="kattis_java" />
+      <envs />
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method />
+    </configuration>
+    <configuration default="false" name="BreakingBad" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="BreakingBad" />
       <option name="VM_PARAMETERS" />
       <option name="PROGRAM_PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
@@ -525,19 +530,19 @@
       <method />
     </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="Application.Kemija" />
-      <item index="1" class="java.lang.String" itemvalue="Application.Catalan" />
-      <item index="2" class="java.lang.String" itemvalue="Application.Pet" />
-      <item index="3" class="java.lang.String" itemvalue="Application.Tri" />
-      <item index="4" class="java.lang.String" itemvalue="Application.AlphabetSpam" />
+      <item index="0" class="java.lang.String" itemvalue="Application.Catalan" />
+      <item index="1" class="java.lang.String" itemvalue="Application.Pet" />
+      <item index="2" class="java.lang.String" itemvalue="Application.Tri" />
+      <item index="3" class="java.lang.String" itemvalue="Application.AlphabetSpam" />
+      <item index="4" class="java.lang.String" itemvalue="Application.BreakingBad" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Application.AlphabetSpam" />
-        <item index="1" class="java.lang.String" itemvalue="Application.Tri" />
-        <item index="2" class="java.lang.String" itemvalue="Application.Pet" />
-        <item index="3" class="java.lang.String" itemvalue="Application.Catalan" />
-        <item index="4" class="java.lang.String" itemvalue="Application.Kemija" />
+        <item index="0" class="java.lang.String" itemvalue="Application.BreakingBad" />
+        <item index="1" class="java.lang.String" itemvalue="Application.AlphabetSpam" />
+        <item index="2" class="java.lang.String" itemvalue="Application.Tri" />
+        <item index="3" class="java.lang.String" itemvalue="Application.Pet" />
+        <item index="4" class="java.lang.String" itemvalue="Application.Catalan" />
       </list>
     </recent_temporary>
     <configuration name="&lt;template&gt;" type="WebApp" default="true" selected="false">
@@ -613,13 +618,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/Busnumbers.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1050">
-          <caret line="23" column="38" selection-start-line="23" selection-start-column="38" selection-end-line="23" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Doorman.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="120" max-vertical-offset="1275">
@@ -975,13 +973,25 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/AlphabetSpam.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.20071048" vertical-offset="232" max-vertical-offset="795">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="795">
           <caret line="23" column="56" selection-start-line="23" selection-start-column="56" selection-end-line="23" selection-end-column="56" />
           <folding>
             <element signature="e#279#280#0" expanded="true" />
             <element signature="e#313#314#0" expanded="true" />
             <element signature="e#1336#1337#0" expanded="true" />
             <element signature="e#1371#1372#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/BreakingBad.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.026642984" vertical-offset="135" max-vertical-offset="1020">
+          <caret line="8" column="21" selection-start-line="8" selection-start-column="21" selection-end-line="8" selection-end-column="21" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#370#371#0" expanded="true" />
+            <element signature="e#403#404#0" expanded="true" />
           </folding>
         </state>
       </provider>
