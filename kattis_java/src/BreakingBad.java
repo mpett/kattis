@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.HashMap;
 
 /**
@@ -6,6 +7,7 @@ import java.util.HashMap;
 public class BreakingBad {
     Kattio io = new Kattio(System.in);
     private int N, M; private String[] items; private HashMap<String, Integer> itemIndices;
+    private ArrayList<String> walter, jesse; private final static String NO_SOLUTION = "impossible";
 
     public static void main(String[] args) {
         new BreakingBad();
@@ -13,8 +15,22 @@ public class BreakingBad {
 
     public BreakingBad() {
         AdjMatrixGraph dangerousPairs = handleInput();
-        System.err.println(dangerousPairs);
+        if (determineDistribution(dangerousPairs))
+            printResult();
+        else System.out.println(NO_SOLUTION);
         io.close();
+    }
+
+    boolean determineDistribution(AdjMatrixGraph dangerousPairs) {
+        return false;
+    }
+
+    void printResult() {
+        for (String item : walter)
+            System.out.print(item + " ");
+        System.out.println();
+        for (String item : jesse)
+            System.out.println(item + " ");
     }
 
     AdjMatrixGraph handleInput() {
@@ -29,10 +45,10 @@ public class BreakingBad {
         }
         M = io.getInt();
         AdjMatrixGraph itemGraph = new AdjMatrixGraph(N);
-        System.err.println(M);
+        String firstItem, secondItem; int V, E;
         for (int i = 0; i < M; i++) {
-            String firstItem = io.getWord(); String secondItem = io.getWord();
-            int V = itemIndices.get(firstItem); int E = itemIndices.get(secondItem);
+            firstItem = io.getWord(); secondItem = io.getWord();
+            V = itemIndices.get(firstItem); E = itemIndices.get(secondItem);
             itemGraph.addEdge(V, E);
         }
         return itemGraph;
