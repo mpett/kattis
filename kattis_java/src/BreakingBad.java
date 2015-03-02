@@ -1,5 +1,4 @@
-import java.util.ArrayList;
-import java.util.HashMap;
+
 
 /**
  * Created by martinpettersson on 27/02/15.
@@ -7,56 +6,38 @@ import java.util.HashMap;
 public class BreakingBad {
     Kattio io = new Kattio(System.in);
     private int N, M;
-    private ArrayList<String> items; private HashMap<String, String> dangerousPairs;
-    private ArrayList<String> walter, jesse;
-
 
     public static void main(String[] args) {
         new BreakingBad();
     }
 
     public BreakingBad() {
-        handleInput();
-        //test();
-        walter = new ArrayList<String>();
-        jesse = new ArrayList<String>();
-        String dangerousPair;
-        for (String item : items) {
-            dangerousPair = dangerousPairs.get(item);
-            if (dangerousPair != null) {
-                jesse.add(item);
-            } else
-                walter.add(item);
-
-        }
-        if (walter.isEmpty() || jesse.isEmpty())
-            System.out.printf("impossible");
-        else {
-            for (String item : walter)
-                System.out.print(item + " ");
-            System.out.println();
-            for (String item : jesse)
-                System.out.print(item + " ");
-        }
+        AdjMatrixGraph dangerousPairs = handleInput();
+        System.err.println(dangerousPairs);
+        io.close();
     }
 
-    void test() {
-        System.err.println(N + " " + M);
-        for (String item : items) {
-            System.err.println("Item " + item);
-            System.err.println("Dangerous with " + dangerousPairs.get(item));
-            System.err.println("");
-        }
-    }
-
-    void handleInput() {
-        items = new ArrayList<String>();
-        dangerousPairs = new HashMap<String, String>();
+    AdjMatrixGraph handleInput() {
         N = io.getInt();
+        String[] items = new String[N];
         for (int item = 0; item < N; item++)
-            items.add(io.getWord());
+            items[item] = io.getWord();
         M = io.getInt();
-        for (int itemPair = 0; itemPair < M; itemPair++)
-            dangerousPairs.put(io.getWord(), io.getWord());
+        AdjMatrixGraph itemGraph = new AdjMatrixGraph(hashItem(io.getWord()), hashItem(io.getWord()));
+        for (int dangerousPair = 1; dangerousPair < M; dangerousPair++) {
+            String firstItem = io.getWord(); String secondItem = io.getWord();
+            int V = hashItem(firstItem); int E = hashItem(secondItem);
+            itemGraph = new AdjMatrixGraph(V, E);
+        }
+        return itemGraph;
+    }
+
+    int hashItem(String item) {
+        int hash=3;
+        int strlen = item.length();
+        for (int i=0; i < strlen; i++) {
+            hash = hash+item.charAt(i);
+        }
+        return Math.abs(hash);
     }
 }
