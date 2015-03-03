@@ -1,6 +1,3 @@
-import com.sun.org.apache.xpath.internal.operations.Bool;
-
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
 
@@ -10,7 +7,8 @@ import java.util.Iterator;
 public class BreakingBad {
     Kattio io = new Kattio(System.in);
     private int N, M; private String[] items; private HashMap<String, Integer> itemIndices;
-    private String walterItems, jesseItems; private final static String NO_SOLUTION = "impossible";
+    private final static String NO_SOLUTION = "impossible";
+    private boolean[] walter, jesse;
 
     public static void main(String[] args) {
         new BreakingBad();
@@ -19,31 +17,35 @@ public class BreakingBad {
     public BreakingBad() {
         AdjMatrixGraph dangerousPairs = handleInput();
         if (determineDistribution(dangerousPairs))
-            System.out.println(walterItems + "\n" + jesseItems);
+            printResult();
         else System.out.println(NO_SOLUTION);
         io.close();
     }
 
+    void printResult() {
+        String walterItems = ""; String jesseItems = "";
+        for (int item = 0; item < N; item++) {
+            if (walter[item]) walterItems += items[item] + " ";
+            if (jesse[item]) jesseItems += items[item] + " ";
+        }
+        System.out.println(walterItems + "\n" + jesseItems);
+    }
+
     boolean determineDistribution(AdjMatrixGraph dangerousPairs) {
-        HashMap<Integer, Boolean> walter = new HashMap<Integer, Boolean>();
-        HashMap<Integer, Boolean> jesse = new HashMap<Integer, Boolean>();
-        Iterable<Integer> itemPairs;
-        for (int itemIndex = 0; itemIndex < N; itemIndex++) {
-            itemPairs = dangerousPairs.adj(itemIndex);
-            if (!itemPairs.iterator().hasNext()) {
-                walter.put(itemIndex, true);
-                walterItems += items[itemIndex] + " ";
-                continue;
-            } else {
-                for (int itemPair : itemPairs) {
-                    System.err.println(itemPair);
-                    if (walter.get(itemPair) != null) {
-                        jesse.put(itemPair, true);
-                        jesseItems += items[itemIndex] + " ";
-                    } else {
-                        walter.put(itemIndex, true);
-                        walterItems += items[itemIndex] + " ";
-                    }
+        Iterator<Integer> itemPairs;
+        walter = new boolean[N]; jesse = new boolean[N];
+        for (int item = 0; item < N; item++) {
+            itemPairs = dangerousPairs.adj(item).iterator();
+            if (!itemPairs.hasNext())
+                walter[item] = true;
+            else {
+                while (itemPairs.hasNext()) {
+                    int dangerousItem = itemPairs.next();
+                    if (walter[dangerousItem] && jesse[dangerousItem])
+                        return false;
+                    else if (walter[dangerousItem])
+                        jesse[item] = true;
+                    else walter[item] = true;
                 }
             }
         }
