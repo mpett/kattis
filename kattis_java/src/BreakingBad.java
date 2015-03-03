@@ -1,5 +1,8 @@
+import com.sun.org.apache.xpath.internal.operations.Bool;
+
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Iterator;
 
 /**
  * Created by martinpettersson on 27/02/15.
@@ -7,7 +10,7 @@ import java.util.HashMap;
 public class BreakingBad {
     Kattio io = new Kattio(System.in);
     private int N, M; private String[] items; private HashMap<String, Integer> itemIndices;
-    private ArrayList<String> walter, jesse; private final static String NO_SOLUTION = "impossible";
+    private String walterItems, jesseItems; private final static String NO_SOLUTION = "impossible";
 
     public static void main(String[] args) {
         new BreakingBad();
@@ -16,21 +19,35 @@ public class BreakingBad {
     public BreakingBad() {
         AdjMatrixGraph dangerousPairs = handleInput();
         if (determineDistribution(dangerousPairs))
-            printResult();
+            System.out.println(walterItems + "\n" + jesseItems);
         else System.out.println(NO_SOLUTION);
         io.close();
     }
 
     boolean determineDistribution(AdjMatrixGraph dangerousPairs) {
-        return false;
-    }
-
-    void printResult() {
-        for (String item : walter)
-            System.out.print(item + " ");
-        System.out.println();
-        for (String item : jesse)
-            System.out.println(item + " ");
+        HashMap<Integer, Boolean> walter = new HashMap<Integer, Boolean>();
+        HashMap<Integer, Boolean> jesse = new HashMap<Integer, Boolean>();
+        Iterable<Integer> itemPairs;
+        for (int itemIndex = 0; itemIndex < N; itemIndex++) {
+            itemPairs = dangerousPairs.adj(itemIndex);
+            if (!itemPairs.iterator().hasNext()) {
+                walter.put(itemIndex, true);
+                walterItems += items[itemIndex] + " ";
+                continue;
+            } else {
+                for (int itemPair : itemPairs) {
+                    System.err.println(itemPair);
+                    if (walter.get(itemPair) != null) {
+                        jesse.put(itemPair, true);
+                        jesseItems += items[itemIndex] + " ";
+                    } else {
+                        walter.put(itemIndex, true);
+                        walterItems += items[itemIndex] + " ";
+                    }
+                }
+            }
+        }
+        return true;
     }
 
     AdjMatrixGraph handleInput() {
