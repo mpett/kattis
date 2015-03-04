@@ -15,6 +15,8 @@ public class BreakingBad {
     }
 
     public BreakingBad() {
+        //printTestData(5000, 2000);
+        //System.exit(0);
         AdjMatrixGraph dangerousPairs = handleInput();
         if (determineDistribution(dangerousPairs))
             printResult();
@@ -71,5 +73,17 @@ public class BreakingBad {
             itemGraph.addEdge(V, E);
         }
         return itemGraph;
+    }
+
+    void printTestData(int N, int M) {
+        System.out.println(N*5);
+        for (int i = 0; i < N; i++) {
+            System.out.println("battery_acid" + i + "\n" + "drain_cleaner" + i + "\n" + "antifreeze" + i + "\n" + "cold_medicine" + i + "\n" + "lantern_fuel" + i);
+        }
+        System.out.println(M*2);
+        for (int i = 0; i < M; i++) {
+            System.out.println("cold_medicine" + i + " battery_acid" + i);
+            System.out.println("antifreeze" + i + " cold_medicine" + i);
+        }
     }
 }
