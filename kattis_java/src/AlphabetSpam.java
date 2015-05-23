@@ -3,45 +3,44 @@
  */
 public class AlphabetSpam {
     Kattio io = new Kattio(System.in);
-    private final char UNDERSCORE = '_';
-    String inputString; double underscores, lowerCase, upperCase, symbols;
+    String inputString;
+    final String UPPERCASE = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"; final String LOWERCASE = "abcdefghijklmnopqrstuvwxyz";
 
     public static void main(String[] args) {
         new AlphabetSpam();
     }
 
     public AlphabetSpam() {
-        inputString = handleInput();
-        count();
-        printResults();
+        handleInput();
+        double results[] = ratioResults();
+        for (double ratio : results)
+            System.out.println(ratio);
         io.close();
     }
 
-    void printResults() {
-        double wordLength = (double) inputString.length();
-        System.out.println(underscores/wordLength + "\n" +
-                           lowerCase/wordLength + "\n" +
-                           upperCase/wordLength + "\n" +
-                           symbols/wordLength
-        );
-    }
-
-    void count() {
-        char character;
-        for (int characterIndex = 0; characterIndex < inputString.length(); characterIndex++) {
-            character = inputString.charAt(characterIndex);
-            if (character == UNDERSCORE)
-                underscores++;
-            else if (Character.isLowerCase(character))
-                lowerCase++;
-            else if (Character.isUpperCase(character))
-                upperCase++;
-            else if (!Character.isAlphabetic(character))
-                symbols++;
+    double[] ratioResults() {
+        double[] results = new double[4];
+        double numWhitespaces = inputString.length() - inputString.replace("_", "").length();
+        double whiteSpaceRatio = numWhitespaces / inputString.length();
+        results[0] = whiteSpaceRatio;
+        int originalLength = inputString.length();
+        inputString = inputString.replace("_", "");
+        char currentChar; double numLowercase = 0; double numUppercase = 0; double numSymbols = 0;
+        for (int charIndex = 0; charIndex < inputString.length(); charIndex++) {
+            currentChar = inputString.charAt(charIndex);
+            if (LOWERCASE.indexOf(currentChar) != -1)
+                numLowercase++;
+            else if (UPPERCASE.indexOf(currentChar) != -1)
+                numUppercase++;
+            else numSymbols++;
         }
+        results[1] = numLowercase / originalLength;
+        results[2] = numUppercase / originalLength;
+        results[3] = numSymbols / originalLength;
+        return results;
     }
 
-    String handleInput() {
-        return io.getWord();
+    void handleInput() {
+        inputString = io.getWord();
     }
 }
