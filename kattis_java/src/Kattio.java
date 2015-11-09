@@ -27,6 +27,7 @@
  * @author: Kattis
  */
 
+import java.util.Scanner;
 import java.util.StringTokenizer;
 import java.io.BufferedReader;
 import java.io.BufferedOutputStream;
