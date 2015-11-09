@@ -29,6 +29,8 @@ Dice Game
 
 Doorman
 
+Eight Queens
+
 Erase Securely
 
 Kemija
@@ -48,6 +50,8 @@ Reversed Binary Numbers
 Solving for Carrots
 
 Statistics
+
+T9Spelling
 
 The Easiest Problem Is This One
 
