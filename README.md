@@ -33,6 +33,8 @@ Eight Queens
 
 Erase Securely
 
+Everywhere
+
 Kemija
 
 Ladder
