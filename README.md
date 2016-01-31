@@ -51,6 +51,8 @@ Reversed Binary Numbers
 
 Solving for Carrots
 
+Spavanac
+
 Statistics
 
 T9Spelling
