@@ -55,6 +55,8 @@ Spavanac
 
 Statistics
 
+Symmetric Order
+
 T9Spelling
 
 The Easiest Problem Is This One
