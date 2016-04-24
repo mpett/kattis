@@ -1,3 +1,4 @@
+import java.util.Collections;
 import java.util.Comparator;
 import java.util.HashMap;
 import java.util.HashSet;
@@ -11,26 +12,24 @@ public class Pathfinder {
         // First test
         int[] map = {1, 1, 1, 1, 0, 1, 0, 1, 0, 1, 1, 1};
         int[] outBuffer = new int[12];
-        int result = findPath(0, 0, 1, 2, map, 4, 3, outBuffer, 12);
-        System.out.println(result);
+        findPath(0, 0, 1, 2, map, 4, 3, outBuffer, 12);
 
         // Second test
         int[] newMap = {0, 0, 1, 0, 1, 1, 1, 0, 1};
         int[] newBuffer = new int[7];
-        result = findPath(2, 0, 0, 2, newMap, 3, 3, newBuffer, 7);
-        System.out.println(result);
+        findPath(2, 0, 0, 2, newMap, 3, 3, newBuffer, 7);
     }
 
-    private static int findPath(int startX, int startY, int targetX, int targetY,
+    private static void findPath(int startX, int startY, int targetX, int targetY,
                                 int[] map, int mapWidth, int mapHeight, int[] outBuffer, int outBufferSize) {
         // The set of nodes already evaluated.
         HashSet<Cell<Integer, Integer>> closedSet = new HashSet<Cell<Integer, Integer>>();
 
         // The set of currently discovered nodes still to be evaluated.
         // Initially, only the start node is known.
-        Cell<Integer, Integer> startNode = new Cell<Integer, Integer>(startX, startY);
+        Cell<Integer, Integer> startCell = new Cell<Integer, Integer>(startX, startY);
         HashSet<Cell<Integer, Integer>> openSet = new HashSet<Cell<Integer, Integer>>();
-        openSet.add(startNode);
+        openSet.add(startCell);
 
         // For each node, which node it can most efficiently be reached from.
         // If a node can be reached from many nodes, it will eventually contain the most
@@ -42,22 +41,28 @@ public class Pathfinder {
         HashMap<Cell<Integer, Integer>, Integer> gScore = new HashMap<Cell<Integer, Integer>, Integer>();
 
         // The cost of going from start to start is zero.
-        gScore.put(startNode, 0);
+        gScore.put(startCell, 0);
 
         // For each node, the total cost of getting from the start node to the goal node
         // by passing by that node. That value is partly known, partly heuristic.
         HashMap<Cell<Integer, Integer>, Integer> fScore = new HashMap<Cell<Integer, Integer>, Integer>();
 
         // For the first node, that value is completely heuristic.
-        Cell<Integer, Integer> goalNode = new Cell<Integer, Integer>(startX, startY);
-        fScore.put(startNode, heuristicCostEstimate(startNode, goalNode));
+        Cell<Integer, Integer> goalCell = new Cell<Integer, Integer>(startX, startY);
+        fScore.put(startCell, heuristicCostEstimate(startCell, goalCell));
 
         while (!openSet.isEmpty()) {
+            Cell currentCell = Collections.min(openSet, new CellComparator());
 
+            if (currentCell.equals(goalCell)) {
+                reconstructPath(cameFrom, currentCell);
+            }
         }
+    }
 
-
-        return 0;
+    private static void reconstructPath(HashMap<Cell<Integer, Integer>, Cell<Integer, Integer>> cameFrom,
+                                        Cell currentCell) {
+        // TODO
     }
 
     private static int heuristicCostEstimate(Cell startNode, Cell goalNode) {
@@ -67,6 +72,11 @@ public class Pathfinder {
 
 }
 
+/**
+ * Cell Data Structure
+ * @param <X>
+ * @param <Y>
+ */
 class Cell<X,Y> {
     private final X xCoordinate;
     private final Y yCoordinate;
@@ -94,8 +104,10 @@ class Cell<X,Y> {
     }
 }
 
+/**
+ * Compares the fScore values of two cells
+ */
 class CellComparator implements Comparator<Cell> {
-
     @Override
     public int compare(Cell firstCell, Cell secondCell) {
         if (firstCell.getfScore() > secondCell.getfScore())
