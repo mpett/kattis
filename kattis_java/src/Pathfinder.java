@@ -1,3 +1,4 @@
+import java.util.Comparator;
 import java.util.HashMap;
 import java.util.HashSet;
 
@@ -76,6 +77,8 @@ class Cell<X,Y> {
         this.yCoordinate = yCoordinate;
     }
 
+    public int getfScore() { return fScore; }
+
     public X getX() { return xCoordinate; }
     public Y getY() { return yCoordinate; }
 
@@ -88,5 +91,15 @@ class Cell<X,Y> {
         Cell pairo = (Cell) o;
         return this.xCoordinate.equals(pairo.getX()) &&
                 this.yCoordinate.equals(pairo.getY());
+    }
+}
+
+class CellComparator implements Comparator<Cell> {
+
+    @Override
+    public int compare(Cell firstCell, Cell secondCell) {
+        if (firstCell.getfScore() > secondCell.getfScore())
+            return 1;
+        else return -1;
     }
 }
