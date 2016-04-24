@@ -1,4 +1,3 @@
-import java.util.Comparator;
 import java.util.HashMap;
 import java.util.HashSet;
 
@@ -24,32 +23,32 @@ public class Pathfinder {
     private static int findPath(int startX, int startY, int targetX, int targetY,
                                 int[] map, int mapWidth, int mapHeight, int[] outBuffer, int outBufferSize) {
         // The set of nodes already evaluated.
-        HashSet<Node<Integer, Integer>> closedSet = new HashSet<Node<Integer, Integer>>();
+        HashSet<Cell<Integer, Integer>> closedSet = new HashSet<Cell<Integer, Integer>>();
 
         // The set of currently discovered nodes still to be evaluated.
         // Initially, only the start node is known.
-        Node<Integer, Integer> startNode = new Node<Integer, Integer>(startX, startY);
-        HashSet<Node<Integer, Integer>> openSet = new HashSet<Node<Integer, Integer>>();
+        Cell<Integer, Integer> startNode = new Cell<Integer, Integer>(startX, startY);
+        HashSet<Cell<Integer, Integer>> openSet = new HashSet<Cell<Integer, Integer>>();
         openSet.add(startNode);
 
         // For each node, which node it can most efficiently be reached from.
         // If a node can be reached from many nodes, it will eventually contain the most
         // efficient previous step.
-        HashMap<Node<Integer, Integer>, Node<Integer, Integer>> cameFrom =
-                new HashMap<Node<Integer, Integer>, Node<Integer, Integer>>();
+        HashMap<Cell<Integer, Integer>, Cell<Integer, Integer>> cameFrom =
+                new HashMap<Cell<Integer, Integer>, Cell<Integer, Integer>>();
 
         // For each node, the cost of getting from the start node to that node.
-        HashMap<Node<Integer, Integer>, Integer> gScore = new HashMap<Node<Integer, Integer>, Integer>();
+        HashMap<Cell<Integer, Integer>, Integer> gScore = new HashMap<Cell<Integer, Integer>, Integer>();
 
         // The cost of going from start to start is zero.
         gScore.put(startNode, 0);
 
         // For each node, the total cost of getting from the start node to the goal node
         // by passing by that node. That value is partly known, partly heuristic.
-        HashMap<Node<Integer, Integer>, Integer> fScore = new HashMap<Node<Integer, Integer>, Integer>();
+        HashMap<Cell<Integer, Integer>, Integer> fScore = new HashMap<Cell<Integer, Integer>, Integer>();
 
         // For the first node, that value is completely heuristic.
-        Node<Integer, Integer> goalNode = new Node<Integer, Integer>(startX, startY);
+        Cell<Integer, Integer> goalNode = new Cell<Integer, Integer>(startX, startY);
         fScore.put(startNode, heuristicCostEstimate(startNode, goalNode));
 
         while (!openSet.isEmpty()) {
@@ -60,34 +59,34 @@ public class Pathfinder {
         return 0;
     }
 
-    private static int heuristicCostEstimate(Node startNode, Node goalNode) {
+    private static int heuristicCostEstimate(Cell startNode, Cell goalNode) {
         return 0;
     }
 
 
 }
 
-class Node<L,R> {
-    private final L left;
-    private final R right;
+class Cell<X,Y> {
+    private final X xCoordinate;
+    private final Y yCoordinate;
     private int fScore;
 
-    public Node(L left, R right) {
-        this.left = left;
-        this.right = right;
+    public Cell(X xCoordinate, Y yCoordinate) {
+        this.xCoordinate = xCoordinate;
+        this.yCoordinate = yCoordinate;
     }
 
-    public L getLeft() { return left; }
-    public R getRight() { return right; }
+    public X getX() { return xCoordinate; }
+    public Y getY() { return yCoordinate; }
 
     @Override
-    public int hashCode() { return left.hashCode() ^ right.hashCode(); }
+    public int hashCode() { return xCoordinate.hashCode() ^ yCoordinate.hashCode(); }
 
     @Override
     public boolean equals(Object o) {
-        if (!(o instanceof Node)) return false;
-        Node pairo = (Node) o;
-        return this.left.equals(pairo.getLeft()) &&
-                this.right.equals(pairo.getRight());
+        if (!(o instanceof Cell)) return false;
+        Cell pairo = (Cell) o;
+        return this.xCoordinate.equals(pairo.getX()) &&
+                this.yCoordinate.equals(pairo.getY());
     }
 }

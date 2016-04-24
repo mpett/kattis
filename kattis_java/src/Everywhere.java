@@ -9,7 +9,7 @@ public class Everywhere {
     Kattio io = new Kattio(System.in);
 
     public static void main(String[] args) {
-        new Everywhere();
+        new Plot();
     }
 
     public Everywhere() {

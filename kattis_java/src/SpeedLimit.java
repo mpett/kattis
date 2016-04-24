@@ -15,7 +15,6 @@ public class SpeedLimit {
                 int elapsedTime = io.getInt();
                 result += miles * (elapsedTime - prev);
                 prev = elapsedTime;
-
             }
             System.out.println(result + " miles");
         }
