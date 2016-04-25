@@ -21,7 +21,8 @@ public class Pathfinder {
     }
 
     private static void findPath(int startX, int startY, int targetX, int targetY,
-                                int[] map, int mapWidth, int mapHeight, int[] outBuffer, int outBufferSize) {
+                                 int[] map, int mapWidth, int mapHeight, int[] outBuffer, int outBufferSize) {
+
         // The set of nodes already evaluated.
         HashSet<Cell<Integer, Integer>> closedSet = new HashSet<Cell<Integer, Integer>>();
 
@@ -51,13 +52,9 @@ public class Pathfinder {
         Cell<Integer, Integer> goalCell = new Cell<Integer, Integer>(startX, startY);
         fScore.put(startCell, heuristicCostEstimate(startCell, goalCell));
 
-        while (!openSet.isEmpty()) {
-            Cell currentCell = Collections.min(openSet, new CellComparator());
+        Grid cellGrid = new Grid(startCell, goalCell, map, mapWidth, mapHeight);
 
-            if (currentCell.equals(goalCell)) {
-                reconstructPath(cameFrom, currentCell);
-            }
-        }
+        System.err.println("lol");
     }
 
     private static void reconstructPath(HashMap<Cell<Integer, Integer>, Cell<Integer, Integer>> cameFrom,
@@ -69,6 +66,35 @@ public class Pathfinder {
         return 0;
     }
 
+
+}
+
+class Grid {
+    private Cell startCell;
+    private Cell goalCell;
+    private Cell[][] gridStructure;
+    private int width, height;
+
+    public Grid(Cell startCell, Cell goalCell, int[] map, int width, int height) {
+        this.startCell = startCell;
+        this.goalCell = goalCell;
+        this.width = width;
+        this.height = height;
+        gridStructure = new Cell[width][height];
+        buildGrid();
+    }
+
+    public String toString() {
+        return "";
+    }
+
+    private void buildGrid() {
+        for (int xCoordinate = 0; xCoordinate < width; ++xCoordinate) {
+            for (int yCoordinate = 0; yCoordinate < height; ++yCoordinate) {
+                gridStructure[xCoordinate][yCoordinate] = new Cell(xCoordinate, yCoordinate);
+            }
+        }
+    }
 
 }
 
