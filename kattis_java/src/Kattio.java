@@ -27,7 +27,6 @@
  * @author: Kattis
  */
 
-import java.util.Scanner;
 import java.util.StringTokenizer;
 import java.io.BufferedReader;
 import java.io.BufferedOutputStream;
@@ -66,6 +65,8 @@ public class Kattio extends PrintWriter {
     public String getWord() {
         return nextToken();
     }
+
+
 
     private BufferedReader r;
     private String line;
